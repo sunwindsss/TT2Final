@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(to bottom, #007bff, #003d80); /* Replace with your desired gradient colors */
+    color: #fff;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Use an appropriate background color with some transparency */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    color: #007bff; /* Use a contrasting color for the heading */
+}
+
+ul {
+    padding-left: 20px;
+    color: #333; /* Use a contrasting color for the list items */
+}
+
+li {
+    margin-bottom: 10px;
+}
