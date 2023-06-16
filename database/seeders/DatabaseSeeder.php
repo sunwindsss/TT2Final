@@ -151,6 +151,103 @@ class DatabaseSeeder extends Seeder
                     ],
                 ],
             ],
+            [
+                'name' => 'The World At War',
+                'description' => 'A documentary series about World War II.',
+                'fixed_score' => 9.2,
+                'actors' => [
+                    [
+                        'full_name' => 'Laurence Olivier',
+                        'age' => 82,
+                        'biography' => 'Laurence Kerr Olivier was an English actor and director.',
+                    ],
+                ],
+            ],
+            [
+                'name' => 'Rick and Morty',
+                'description' => 'An animated science fiction sitcom.',
+                'fixed_score' => 9.3,
+                'actors' => [
+                    [
+                        'full_name' => 'Justin Roiland',
+                        'age' => 41,
+                        'biography' => 'Justin Roiland is an American actor, animator, writer, producer, and director.',
+                    ],
+                    [
+                        'full_name' => 'Chris Parnell',
+                        'age' => 55,
+                        'biography' => 'Thomas Christopher Parnell is an American actor, voice artist, and comedian.',
+                    ],
+                ],
+            ],
+            [
+                'name' => 'Sherlock',
+                'description' => 'A modern-day adaptation of Sherlock Holmes stories.',
+                'fixed_score' => 9.1,
+                'actors' => [
+                    [
+                        'full_name' => 'Benedict Cumberbatch',
+                        'age' => 45,
+                        'biography' => 'Benedict Timothy Carlton Cumberbatch is an English actor.',
+                    ],
+                    [
+                        'full_name' => 'Martin Freeman',
+                        'age' => 50,
+                        'biography' => 'Martin John Christopher Freeman is an English actor.',
+                    ],
+                ],
+            ],
+            [
+                'name' => 'Seinfeld',
+                'description' => 'A sitcom about a group of friends in New York City.',
+                'fixed_score' => 8.8,
+                'actors' => [
+                    [
+                        'full_name' => 'Jerry Seinfeld',
+                        'age' => 67,
+                        'biography' => 'Jerome Allen Seinfeld is an American comedian, actor, writer, and producer.',
+                    ],
+                    [
+                        'full_name' => 'Julia Louis-Dreyfus',
+                        'age' => 61,
+                        'biography' => 'Julia Scarlett Elizabeth Louis-Dreyfus is an American actress, comedian, and producer.',
+                    ],
+                ],
+            ],
+            [
+                'name' => 'Succession',
+                'description' => 'A drama series about a wealthy family grappling for control of their media and entertainment conglomerate.',
+                'fixed_score' => 8.7,
+                'actors' => [
+                    [
+                        'full_name' => 'Brian Cox',
+                        'age' => 75,
+                        'biography' => 'Brian Denis Cox is a Scottish actor.',
+                    ],
+                    [
+                        'full_name' => 'Jeremy Strong',
+                        'age' => 43,
+                        'biography' => 'Jeremy Strong is an American actor.',
+                    ],
+                ],
+            ],
+            [
+                'name' => 'The Walking Dead',
+                'description' => 'A post-apocalyptic horror television series based on the comic book series.',
+                'fixed_score' => 8.2,
+                'actors' => [
+                    [
+                        'full_name' => 'Andrew Lincoln',
+                        'age' => 48,
+                        'biography' => 'Andrew James Clutterbuck, known professionally as Andrew Lincoln, is an English actor.',
+                    ],
+                    [
+                        'full_name' => 'Norman Reedus',
+                        'age' => 53,
+                        'biography' => 'Norman Mark Reedus is an American actor, television host, and model.',
+                    ],
+                ],
+            ],
         ];
 
         foreach ($tvShowsData as $tvShowData) {
