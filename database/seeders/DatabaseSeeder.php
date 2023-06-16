@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Breaking Bad',
                 'description' => 'A high school chemistry teacher turned methamphetamine kingpin.',
                 'fixed_score' => 9.5,
+                'picture' => 'tv_shows/breaking_bad.png',
                 'actors' => [
                     [
                         'full_name' => 'Bryan Cranston',
@@ -36,6 +37,7 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Game of Thrones',
                 'description' => 'Nine noble families wage war for control over the lands of Westeros.',
                 'fixed_score' => 9.3,
+                'picture' => 'tv_shows/game_of_thrones.png',
                 'actors' => [
                     [
                         'full_name' => 'Peter Dinklage',
@@ -53,6 +55,7 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Chernobyl',
                 'description' => 'The Chernobyl nuclear disaster and its aftermath.',
                 'fixed_score' => 9.4,
+                'picture' => 'tv_shows/chernobyl.png',
                 'actors' => [
                     [
                         'full_name' => 'Jared Harris',
@@ -70,6 +73,7 @@ class DatabaseSeeder extends Seeder
                 'name' => 'The Sopranos',
                 'description' => 'New Jersey mob boss Tony Soprano juggles the problems of his personal life.',
                 'fixed_score' => 9.2,
+                'picture' => 'tv_shows/the_sopranos.png',
                 'actors' => [
                     [
                         'full_name' => 'James Gandolfini',
@@ -87,6 +91,7 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Better Call Saul',
                 'description' => 'The trials and tribulations of criminal lawyer Jimmy McGill in the time before he established his strip-mall law office in Albuquerque, New Mexico.',
                 'fixed_score' => 8.7,
+                'picture' => 'tv_shows/better_call_saul.png',
                 'actors' => [
                     [
                         'full_name' => 'Bob Odenkirk',
@@ -104,6 +109,7 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Friends',
                 'description' => 'The misadventures of a group of friends as they navigate the pitfalls of work, life, and love in Manhattan.',
                 'fixed_score' => 8.9,
+                'picture' => 'tv_shows/friends.png',
                 'actors' => [
                     [
                         'full_name' => 'Jennifer Aniston',
@@ -121,6 +127,7 @@ class DatabaseSeeder extends Seeder
                 'name' => 'The Wire',
                 'description' => 'The Baltimore drug scene, as seen through the eyes of drug dealers and law enforcement.',
                 'fixed_score' => 9.3,
+                'picture' => 'tv_shows/the_wire.png',
                 'actors' => [
                     [
                         'full_name' => 'Dominic West',
@@ -138,6 +145,7 @@ class DatabaseSeeder extends Seeder
                 'name' => 'The Office',
                 'description' => 'A mockumentary on a group of typical office workers, where the workday consists of ego clashes, inappropriate behavior, and tedium.',
                 'fixed_score' => 8.9,
+                'picture' => 'tv_shows/the_office.png',
                 'actors' => [
                     [
                         'full_name' => 'Steve Carell',
@@ -155,6 +163,7 @@ class DatabaseSeeder extends Seeder
                 'name' => 'The World At War',
                 'description' => 'A documentary series about World War II.',
                 'fixed_score' => 9.2,
+                'picture' => 'tv_shows/the_world_at_war.png',
                 'actors' => [
                     [
                         'full_name' => 'Laurence Olivier',
@@ -167,6 +176,7 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Rick and Morty',
                 'description' => 'An animated science fiction sitcom.',
                 'fixed_score' => 9.3,
+                'picture' => 'tv_shows/rick_and_morty.png',
                 'actors' => [
                     [
                         'full_name' => 'Justin Roiland',
@@ -184,6 +194,7 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Sherlock',
                 'description' => 'A modern-day adaptation of Sherlock Holmes stories.',
                 'fixed_score' => 9.1,
+                'picture' => 'tv_shows/sherlock.png',
                 'actors' => [
                     [
                         'full_name' => 'Benedict Cumberbatch',
@@ -201,6 +212,7 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Seinfeld',
                 'description' => 'A sitcom about a group of friends in New York City.',
                 'fixed_score' => 8.8,
+                'picture' => 'tv_shows/seinfeld.png',
                 'actors' => [
                     [
                         'full_name' => 'Jerry Seinfeld',
@@ -218,6 +230,7 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Succession',
                 'description' => 'A drama series about a wealthy family grappling for control of their media and entertainment conglomerate.',
                 'fixed_score' => 8.7,
+                'picture' => 'tv_shows/succession.png',
                 'actors' => [
                     [
                         'full_name' => 'Brian Cox',
@@ -235,6 +248,7 @@ class DatabaseSeeder extends Seeder
                 'name' => 'The Walking Dead',
                 'description' => 'A post-apocalyptic horror television series based on the comic book series.',
                 'fixed_score' => 8.2,
+                'picture' => 'tv_shows/the_walking_dead.png',
                 'actors' => [
                     [
                         'full_name' => 'Andrew Lincoln',
