@@ -23,6 +23,11 @@ Route::get('/', function () {
 
 Route::get('/', [TemporaryTVShowController::class, 'index'])->name('home');
 
+Route::post('/tvshows/{tvshow}/rate', [TemporaryTVShowController::class, 'rate'])->name('tvshows.rate');
+Route::delete('/tvshows/rate/{rating}', [TemporaryTVShowController::class, 'deleteRating'])->name('tvshows.rate.delete');
+
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

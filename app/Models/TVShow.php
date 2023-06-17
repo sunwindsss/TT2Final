@@ -16,4 +16,10 @@ class TVShow extends Model
     {
         return $this->hasMany(ActorsInShows::class, 'show_id');
     }
+
+    // Relationship to TV Show ratings
+    public function ratings()
+    {
+        return $this->hasMany(Rating::class, 'tv_show_id');
+    }
 }
