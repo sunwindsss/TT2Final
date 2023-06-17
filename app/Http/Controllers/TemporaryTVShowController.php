@@ -7,6 +7,7 @@ use App\Models\TVShow;
 use App\Models\ActorsInShows;
 use App\Models\Actor;
 use App\Models\Rating;
+use App\Models\Watchlist;
 
 
 class TemporaryTVShowController extends Controller
@@ -17,19 +18,25 @@ class TemporaryTVShowController extends Controller
     public function index()
     {
         $temporaryTVShows = TVShow::all();
-        //$temporaryTVShows = TVShow::with('actorsInShows.actors', 'ratings')->get();
 
-    
+        // Load the actors for each TV show
         foreach ($temporaryTVShows as $temporaryTVShow) {
             $actors = ActorsInShows::where('show_id', $temporaryTVShow->id)
                 ->join('actors', 'actors_in_shows.actor_id', '=', 'actors.id')
                 ->get(['actors.full_name']);
-    
+
             $temporaryTVShow->actors = $actors;
         }
-    
+
+        // Load the watchlist status for each TV show
+        $user = auth()->user();
+        if ($user) {
+            $temporaryTVShows->load(['watchlist' => function ($query) use ($user) {
+                $query->where('user_id', $user->id);
+            }]);
+        }
+        
         return view('temporary-tvshows.index', ['temporaryTVShows' => $temporaryTVShows]);
-        //return view('temporary-tvshows.index', compact('temporaryTVShows'));
     }
     
     // Function to handle TV show rating requests
@@ -72,8 +79,30 @@ class TemporaryTVShowController extends Controller
         return redirect()->back()->with('success', 'Rating deleted successfully.');
     }
 
-
+    public function addToWatchlist(TVShow $tvShow)
+    {
+        $user = auth()->user();
+        
+        if ($user) {
+            $watchlistEntry = new Watchlist();
+            $watchlistEntry->show_id = $tvShow->id;
+            $watchlistEntry->user_id = $user->id;
+            $watchlistEntry->watchlist_status = 1;
+            $watchlistEntry->save();
     
+            return redirect()->back()->with('success', 'Added to watchlist.');
+        }
+    
+        return redirect()->back()->with('error', 'Please register to add to watchlist.');
+    }
+
+    public function removeFromWatchlist(Watchlist $watchlist)
+    {
+        $watchlist->delete();
+    
+        return redirect()->back()->with('success', 'Removed from watchlist.');
+    }
+
     /**
      * Show the form for creating a new resource.
      */

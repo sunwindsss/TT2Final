@@ -23,10 +23,13 @@ Route::get('/', function () {
 
 Route::get('/', [TemporaryTVShowController::class, 'index'])->name('home');
 
+// Routes regarding to TV show ratings
 Route::post('/tvshows/{tvshow}/rate', [TemporaryTVShowController::class, 'rate'])->name('tvshows.rate');
 Route::delete('/tvshows/rate/{rating}', [TemporaryTVShowController::class, 'deleteRating'])->name('tvshows.rate.delete');
 
-
+// Routes regarding to TV show watchlists
+Route::post('/tvshows/{tvShow}/watchlist', [TemporaryTVShowController::class, 'addToWatchlist'])->name('watchlist.add');
+Route::delete('/watchlist/{watchlist}', [TemporaryTVShowController::class, 'removeFromWatchlist'])->name('watchlist.remove');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

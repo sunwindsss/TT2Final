@@ -22,4 +22,10 @@ class TVShow extends Model
     {
         return $this->hasMany(Rating::class, 'tv_show_id');
     }
+
+    // Relationship to TV Show watchlists
+    public function watchlist()
+    {
+        return $this->hasMany(Watchlist::class, 'show_id');
+    }
 }
