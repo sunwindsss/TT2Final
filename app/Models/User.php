@@ -21,7 +21,14 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
     ];
+
+    // Checks whether the user is an admin. (admins have to manually be set to users through PHPMyAdmin)
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
 
     /**
      * The attributes that should be hidden for serialization.

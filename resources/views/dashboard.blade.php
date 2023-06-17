@@ -10,7 +10,7 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     {{ __("You're logged in!") }}
-                    <a href="{{ route('temporary-tvshows.index') }}" class="btn btn-primary" style="text-decoration: underline;">Back to TV Tracker!</a>
+                    <a href="{{ route('home') }}" class="btn btn-primary" style="text-decoration: underline;">Back to TV Tracker!</a>
                 </div>
             </div>
         </div>

@@ -10,7 +10,7 @@
             right: 10px;
         }
 
-        .top-right a {
+        .top-right a, .top-right button {
             background-color: yellow;
             color: black;
             padding: 5px 10px;
@@ -26,12 +26,15 @@
 <body>
     <div class="container">
         <div class="top-right">
+        <!-- Authorization check for whether a visitor is authorized (login) -->    
             @if (Auth::check())
                 <!-- Show logout button -->
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf
                     <button type="submit">Logout</button>
                 </form>
+                <!-- My Profile / Dashboard button -->
+                <a href="{{ route('dashboard') }}">My Profile</a>
             @else
                 <!-- Show login and register buttons -->
                 <a href="{{ route('login') }}">Login</a>
@@ -39,6 +42,7 @@
             @endif
         </div>
         <h1>TV Show Tracker</h1>
+        <!-- Code for listing each TV Show and Actors -->
         <div class="tv-show-list">
             @foreach ($temporaryTVShows as $temporaryTVShow)
                 <div class="tv-show">
