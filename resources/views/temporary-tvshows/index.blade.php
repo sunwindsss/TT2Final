@@ -28,7 +28,7 @@
             margin-top: 20px;
         }
 
-        /* border-bottom creates the white line effect */ 
+        /* border-bottom creates the white line effect between each TV show listing */ 
         .tv-show {
             border-bottom: 1px solid #ccc;
             padding-bottom: 20px;
@@ -59,8 +59,12 @@
             background-color: gold;
         }
 
+        .rate {
+            background-color: gold;
+        }
+
         .remove-watchlist {
-            background-color: red;
+            background-color: rgb(255, 201, 201);;
         }
     </style>
 </head>
@@ -121,7 +125,7 @@
                                             <label for="rating">Rate this show:</label>
                                             <input type="number" name="rating" id="rating" min="1" max="10" step="1" required style="width: 35px;">
                                             <input type="hidden" name="tv_show_id" value="{{ $temporaryTVShow->id }}">
-                                            <button type="submit" onclick="storeScrollPosition()">Rate</button>
+                                            <button type="submit" class="rate" onclick="storeScrollPosition()">Rate</button>
                                         </div>
                                     </form>
                                 @endif
