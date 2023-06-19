@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\TVShow;
 use App\Models\ActorsInShows;
 use App\Models\Actor;
+use App\Models\Rating;
+use App\Models\Watchlist;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -98,6 +100,39 @@ class AdminPanelController extends Controller
         ]);
 
         return redirect()->route('admin.admin')->with('success', 'Actor linked to show successfully.');
+    }
+
+    public function createDeleteTVShow()
+    {
+        $tvShows = TVShow::all();
+        return view('admin.deletetvshow', compact('tvShows'));
+    }
+
+    public function deleteTVShow(Request $request)
+    {
+        $tvShowId = $request->input('tv_show');
+
+        // Retrieve the TV Show by its ID
+        $tvShow = TVShow::findOrFail($tvShowId);
+
+        // Delete the TV Show's picture from storage
+        if ($tvShow->picture) {
+            Storage::delete('public/' . $tvShow->picture);
+        }
+
+        // Delete the TV Show from the database
+        $tvShow->delete();
+
+        // Remove any associated entries from the actors_in_shows table
+        ActorsInShows::where('show_id', $tvShowId)->delete();
+
+        // Remove any associated ratings for the TV Show
+        Rating::where('tv_show_id', $tvShowId)->delete();
+
+        // Remove any associated watchlist entries for the TV Show
+        Watchlist::where('show_id', $tvShowId)->delete();
+
+        return redirect()->route('admin.admin')->with('success', 'TV Show deleted successfully.');
     }
 
 }

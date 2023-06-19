@@ -61,4 +61,9 @@ Route::middleware('role:admin')->group(function () {
     // Link actor to TV show route
     Route::get('/admin/linkactor', [AdminPanelController::class, 'linkActorView'])->name('admin.linkactor');
     Route::post('/admin/linkactor', [AdminPanelController::class, 'linkActor'])->name('admin.actor.link');
+    // Delete TV show routes
+    Route::get('/admin/tvshow/delete', [AdminPanelController::class, 'createDeleteTVShow'])
+    ->name('admin.tvshow.delete.create');
+    Route::post('/admin/tvshow/delete', [AdminPanelController::class, 'deleteTVShow'])
+    ->name('admin.tvshow.delete');
 });

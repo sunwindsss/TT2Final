@@ -74,7 +74,9 @@
             <button class="admin-button">Registered Users</button>
         </div>
         <div class="admin-buttons">
-            <button class="admin-button">Delete TV Show</button>
+            <form action="{{ route('admin.tvshow.delete.create') }}" method="GET">
+                <button class="admin-button" type="submit">Delete TV Show</button>
+            </form>
             <button class="admin-button">Delete Actor</button>
         </div>
         <p class="back-link" onclick="window.location.href='{{ route('home') }}'">Back to main page</p>
