@@ -1,10 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Admin Panel</title>
+    <title>Admin Panel - TV Tracker</title>
+    <link rel="stylesheet" href="{{ asset('css/temp-styles.css') }}">
+    <style>
+        .admin-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: black;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .admin-container::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("/storage/tv_shows/background.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+        
+        .admin-title {
+            font-family: "Inter", sans-serif;
+            font-size: 40px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .admin-button {
+            background-color: gold;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .admin-buttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .back-link {
+            color: gold;
+            text-decoration: underline;
+            cursor: pointer;
+            display: block;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to the Admin Panel</h1>
-    <!-- Add more content as needed -->
+    <div class="admin-container">
+        <h1 class="admin-title">TV Tracker Admin Panel</h1>
+        <div class="admin-buttons">
+            <button class="admin-button">Add TV Show</button>
+            <button class="admin-button">Add Actor</button>
+            <button class="admin-button">Link Actor to Show</button>
+            <button class="admin-button">Registered Users</button>
+        </div>
+        <p class="back-link" onclick="window.location.href='{{ route('home') }}'">Back to main page</p>
+    </div>
 </body>
 </html>

@@ -17,7 +17,6 @@ return new class extends Migration
             $table->text('description');
             $table->decimal('fixed_score', 3, 1);
             $table->string('picture')->nullable();
-            // Add any additional columns if needed
             $table->timestamps();
         });
     }

@@ -80,6 +80,10 @@
                 </form>
                 <!-- My Profile / Dashboard button -->
                 <a href="{{ route('dashboard') }}">My Profile</a>
+                <!-- Admin Panel button -->
+                @if (Auth::user()->role === 'admin')
+                    <a href="{{ route('admin.admin') }}">Admin Panel</a>
+                @endif
             @else
                 <!-- Show login and register buttons -->
                 <a href="{{ route('login') }}">Login</a>
