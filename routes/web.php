@@ -51,4 +51,6 @@ Route::get('/temporary-tvshows', [TemporaryTVShowController::class, 'index'])->n
 Route::middleware('role:admin')->group(function () {
     // Routes accessible only to admin users
     Route::get('/admin', [AdminPanelController::class, 'index'])->name('admin.admin');
+    Route::get('/admin/tvshow/create', [AdminPanelController::class, 'createTVShow'])->name('admin.tvshow.create');
+    Route::post('/admin/tvshow', [AdminPanelController::class, 'storeTVShow'])->name('admin.tvshow.store');
 });

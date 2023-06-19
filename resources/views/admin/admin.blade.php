@@ -62,10 +62,16 @@
     <div class="admin-container">
         <h1 class="admin-title">TV Tracker Admin Panel</h1>
         <div class="admin-buttons">
-            <button class="admin-button">Add TV Show</button>
+            <form action="{{ route('admin.tvshow.create') }}" method="GET">
+                <button class="admin-button" type="submit">Add TV Show</button>
+            </form>
             <button class="admin-button">Add Actor</button>
             <button class="admin-button">Link Actor to Show</button>
             <button class="admin-button">Registered Users</button>
+        </div>
+        <div class="admin-buttons">
+            <button class="admin-button">Delete TV Show</button>
+            <button class="admin-button">Delete Actor</button>
         </div>
         <p class="back-link" onclick="window.location.href='{{ route('home') }}'">Back to main page</p>
     </div>
