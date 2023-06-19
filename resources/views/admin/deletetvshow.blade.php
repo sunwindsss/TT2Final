@@ -45,9 +45,18 @@
             margin-bottom: 5px;
         }
 
-        button[type="submit"] {
-            background-color: red;
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #333;
             color: white;
+            border: none;
+        }
+
+        button[type="submit"] {
+            background-color: gold;
+            color: black;
             padding: 10px 20px;
             border-radius: 5px;
             border: none;
@@ -55,11 +64,11 @@
         }
 
         button[type="submit"]:hover {
-            background-color: rgb(204, 0, 0);
+            background-color: rgb(218, 165, 32);
         }
 
         button[type="submit"]:active {
-            background-color: rgb(153, 0, 0);
+            background-color: rgb(184, 134, 11);
         }
 
         .back-link {

@@ -135,4 +135,23 @@ class AdminPanelController extends Controller
         return redirect()->route('admin.admin')->with('success', 'TV Show deleted successfully.');
     }
 
+    public function deleteActor()
+    {
+        $actors = Actor::all();
+        return view('admin.deleteactor', compact('actors'));
+    }
+
+    public function destroyActor(Request $request)
+    {
+        $actorId = $request->input('actor');
+
+        // Delete the actor from the database
+        Actor::destroy($actorId);
+
+        // Remove any associated records from the actors_in_shows table
+        ActorsInShows::where('actor_id', $actorId)->delete();
+
+        return redirect()->route('admin.admin')->with('success', 'Actor deleted successfully.');
+    }
+
 }

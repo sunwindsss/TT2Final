@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Link Actor to Show</title>
+    <title>Delete Actor</title>
     <link rel="stylesheet" href="{{ asset('css/temp-styles.css') }}">
     <style>
         .container {
@@ -83,28 +83,20 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="title">Link Actor to Show</h1>
-        <form action="{{ route('admin.actor.link') }}" method="POST">
+        <h1 class="title">Delete Actor</h1>
+        <form action="{{ route('admin.actor.destroy') }}" method="POST">
             @csrf
             <div class="form-group">
-                <label for="actor_id">Actor:</label>
-                <select name="actor_id" id="actor_id" required>
+                <label for="actor">Actor:</label>
+                <select name="actor" id="actor" required>
                     @foreach ($actors as $actor)
                         <option value="{{ $actor->id }}">{{ $actor->full_name }}</option>
                     @endforeach
                 </select>
             </div>
-            <div class="form-group">
-                <label for="show_id">TV Show:</label>
-                <select name="show_id" id="show_id" required>
-                    @foreach ($shows as $show)
-                        <option value="{{ $show->id }}">{{ $show->name }}</option>
-                    @endforeach
-                </select>
-            </div>
-            <button type="submit">Link Actor to Show</button>
+            <button type="submit">Delete Actor</button>
         </form>
-        <p class="back-link" onclick="window.location.href='{{ route('admin.admin') }}'">Back to Admin Panel</p>
+        <a href="{{ route('admin.admin') }}" class="back-link">Back to Admin Panel</a>
     </div>
 </body>
 </html>

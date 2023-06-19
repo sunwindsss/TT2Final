@@ -66,4 +66,7 @@ Route::middleware('role:admin')->group(function () {
     ->name('admin.tvshow.delete.create');
     Route::post('/admin/tvshow/delete', [AdminPanelController::class, 'deleteTVShow'])
     ->name('admin.tvshow.delete');
+    // Delete actor routes
+    Route::get('/admin/actor/delete', [AdminPanelController::class, 'deleteActor'])->name('admin.actor.delete');
+    Route::post('/admin/actor/destroy', [AdminPanelController::class, 'destroyActor'])->name('admin.actor.destroy');
 });
