@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TemporaryTVShowController;
+use App\Http\Controllers\AdminPanelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,3 +46,9 @@ require __DIR__.'/auth.php';
 
 // REDUNDANT: same as home route
 Route::get('/temporary-tvshows', [TemporaryTVShowController::class, 'index'])->name('temporary-tvshows.index');
+
+// Admin panel routes!!
+Route::middleware('role:admin')->group(function () {
+    // Routes accessible only to admin users
+    Route::get('/admin', [AdminPanelController::class, 'index'])->name('admin.admin');
+});

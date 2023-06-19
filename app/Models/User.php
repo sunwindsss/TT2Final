@@ -42,7 +42,10 @@ class User extends Authenticatable
         return $this->hasMany(Watchlist::class);
     }
 
-
+    public function hasRole($role)
+    {
+        return $this->role === $role;
+    }
 
     /**
      * The attributes that should be hidden for serialization.
