@@ -40,7 +40,7 @@ class AdminPanelController extends Controller
         $picturePath = $picture->storeAs('public/tv_shows', $pictureName);
         $picturePath = str_replace('public/', '', $picturePath);
 
-        // Create the TV show record
+        // Create the TV show
         $tvShow = new TVShow();
         $tvShow->name = $validatedData['name'];
         $tvShow->description = $validatedData['description'];
@@ -50,4 +50,28 @@ class AdminPanelController extends Controller
 
         return redirect()->route('admin.admin')->with('success', 'TV Show added successfully.');
     }
+
+    public function createActor()
+    {
+        return view('admin.addactor');
+    }
+
+    public function storeActor(Request $request)
+    {
+        $validatedData = $request->validate([
+            'full_name' => 'required',
+            'age' => 'required|integer',
+            'biography' => 'required',
+        ]);
+
+        // Create the actor
+        $actor = new Actor();
+        $actor->full_name = $validatedData['full_name'];
+        $actor->age = $validatedData['age'];
+        $actor->biography = $validatedData['biography'];
+        $actor->save();
+
+        return redirect()->route('admin.admin')->with('success', 'Actor added successfully.');
+    }
+
 }

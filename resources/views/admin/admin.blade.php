@@ -65,7 +65,9 @@
             <form action="{{ route('admin.tvshow.create') }}" method="GET">
                 <button class="admin-button" type="submit">Add TV Show</button>
             </form>
-            <button class="admin-button">Add Actor</button>
+            <form action="{{ route('admin.actor.create') }}" method="GET">
+                <button class="admin-button" type="submit">Add Actor</button>
+            </form>
             <button class="admin-button">Link Actor to Show</button>
             <button class="admin-button">Registered Users</button>
         </div>
