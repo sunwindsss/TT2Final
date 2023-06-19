@@ -71,7 +71,9 @@
             <form action="{{ route('admin.linkactor') }}" method="GET">
                 <button class="admin-button" type="submit">Link Actor to Show</button>
             </form>
-            <button class="admin-button">Registered Users</button>
+            <form action="{{ route('admin.users') }}" method="GET">
+                <button class="admin-button" type="submit">Registered Users</button>
+            </form>
         </div>
         <div class="admin-buttons">
             <form action="{{ route('admin.tvshow.delete.create') }}" method="GET">

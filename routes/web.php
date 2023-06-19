@@ -69,4 +69,7 @@ Route::middleware('role:admin')->group(function () {
     // Delete actor routes
     Route::get('/admin/actor/delete', [AdminPanelController::class, 'deleteActor'])->name('admin.actor.delete');
     Route::post('/admin/actor/destroy', [AdminPanelController::class, 'destroyActor'])->name('admin.actor.destroy');
+    // Users list from admin panel
+    Route::get('/admin/users', [AdminPanelController::class, 'showUsers'])->name('admin.users');
+    Route::delete('/admin/users/{user}', [AdminPanelController::class, 'destroyUser'])->name('admin.user.destroy');
 });

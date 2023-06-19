@@ -10,6 +10,7 @@ use App\Models\Rating;
 use App\Models\Watchlist;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use App\Models\User;
 
 class AdminPanelController extends Controller
 {
@@ -152,6 +153,28 @@ class AdminPanelController extends Controller
         ActorsInShows::where('actor_id', $actorId)->delete();
 
         return redirect()->route('admin.admin')->with('success', 'Actor deleted successfully.');
+    }
+
+    public function showUsers()
+    {
+        $users = User::all();
+        return view('admin.adminusers', compact('users'));
+    }
+
+    public function destroyUser(Request $request, $user)
+    {
+        $user = User::findOrFail($user);
+    
+        // Delete associated watchlists
+        $user->watchlist()->delete();
+    
+        // Delete associated ratings
+        $user->ratings()->delete();
+    
+        // Delete the user
+        $user->delete();
+    
+        return redirect()->route('admin.admin')->with('success', 'User deleted successfully.');
     }
 
 }
