@@ -68,7 +68,9 @@
             <form action="{{ route('admin.actor.create') }}" method="GET">
                 <button class="admin-button" type="submit">Add Actor</button>
             </form>
-            <button class="admin-button">Link Actor to Show</button>
+            <form action="{{ route('admin.linkactor') }}" method="GET">
+                <button class="admin-button" type="submit">Link Actor to Show</button>
+            </form>
             <button class="admin-button">Registered Users</button>
         </div>
         <div class="admin-buttons">

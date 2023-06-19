@@ -58,4 +58,7 @@ Route::middleware('role:admin')->group(function () {
     // Add Actor routes
     Route::get('/admin/actors/create', [AdminPanelController::class, 'createActor'])->name('admin.actor.create');
     Route::post('/admin/addactor', [AdminPanelController::class, 'storeActor'])->name('admin.actor.store');
+    // Link actor to TV show route
+    Route::get('/admin/linkactor', [AdminPanelController::class, 'linkActorView'])->name('admin.linkactor');
+    Route::post('/admin/linkactor', [AdminPanelController::class, 'linkActor'])->name('admin.actor.link');
 });

@@ -74,4 +74,30 @@ class AdminPanelController extends Controller
         return redirect()->route('admin.admin')->with('success', 'Actor added successfully.');
     }
 
+    public function linkActorView()
+    {
+        $actors = Actor::all(['id', 'full_name']);
+        $shows = TVShow::all(['id', 'name']);
+        
+        return view('admin.linkactor', compact('actors', 'shows'));
+    }
+
+    public function linkActor(Request $request)
+    {
+        $validatedData = $request->validate([
+            'actor_id' => 'required|exists:actors,id',
+            'show_id' => 'required|exists:tv_shows,id',
+        ]);
+
+        $actor = Actor::findOrFail($validatedData['actor_id']);
+        $show = TVShow::findOrFail($validatedData['show_id']);
+
+        $actor->actorsInShows()->create([
+            'show_id' => $show->id,
+            'actor_id' => $actor->id,
+        ]);
+
+        return redirect()->route('admin.admin')->with('success', 'Actor linked to show successfully.');
+    }
+
 }

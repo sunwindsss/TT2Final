@@ -10,6 +10,7 @@ class ActorsInShows extends Model
     use HasFactory;
 
     protected $table = 'actors_in_shows';
+    protected $fillable = ['show_id', 'actor_id'];
 
     // Define the relationship to TVShow
     public function tvShow()
