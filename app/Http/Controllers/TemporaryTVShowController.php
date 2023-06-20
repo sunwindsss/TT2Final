@@ -134,8 +134,15 @@ class TemporaryTVShowController extends Controller
     
         return view('tvshow', compact('tvshow'));
     }
-    
-    
+
+    // For the watchlist view
+    public function watchlist()
+    {
+        $user = auth()->user();
+        $watchlist = $user->watchlist()->with('show')->get();
+
+        return view('watchlist', compact('watchlist'));
+    }
 
     /**
      * Show the form for creating a new resource.

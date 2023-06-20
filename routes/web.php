@@ -39,6 +39,10 @@ Route::get('/tvshows/search', [TemporaryTVShowController::class, 'search'])->nam
 // TV show info view route
 Route::get('/tvshows/{tvshow}', [TemporaryTVShowController::class, 'show'])->name('tvshows.show');
 
+// Watchlist view for authenticated users
+Route::get('/watchlist', [TemporaryTVShowController::class, 'watchlist'])->name('watchlist')->middleware('auth');
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

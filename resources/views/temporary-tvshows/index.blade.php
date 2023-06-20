@@ -75,6 +75,9 @@
             padding: 10px;
             border-radius: 5px;
             z-index: 9999;
+            display: flex;
+            justify-content: center; /* Align buttons in the center */
+            align-items: center;
         }
 
         .search-window form {
@@ -89,7 +92,7 @@
             border: none;
         }
 
-        .search-window button {
+        .search-window .search-button {
             background-color: gold;
             color: black;
             padding: 5px 10px;
@@ -97,20 +100,27 @@
             border: none;
             margin-left: 5px;
             cursor: pointer;
+            text-decoration: none;
         }
 
-        .search-window button:hover {
+        .search-window .search-button:hover {
             background-color: rgb(218, 165, 32);
+            text-decoration: none;
         }
-
     </style>
 </head>
 <body>
     <div class="search-window">
         <form action="{{ route('tvshows.search') }}" method="GET">
             <input type="text" name="search" placeholder="Search TV Shows">
-            <button type="submit">Search</button>
+            <button type="submit" class="search-button">Search</button>
         </form>
+        <!-- My Watchlist button -->
+        @auth
+            <div class="my-watchlist-button">
+                <a href="{{ route('watchlist') }}" class="search-button">My Watchlist</a>
+            </div>
+        @endauth
     </div>
     <div class="container">
         <div class="top-right">

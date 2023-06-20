@@ -18,4 +18,10 @@ class Watchlist extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    // For the watchlist view
+    public function show()
+    {
+        return $this->belongsTo(TVShow::class, 'show_id');
+    }
 }
