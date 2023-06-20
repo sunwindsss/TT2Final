@@ -66,9 +66,52 @@
         .remove-watchlist {
             background-color: rgb(255, 201, 201);;
         }
+
+        .search-window {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: black;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 9999;
+        }
+
+        .search-window form {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-window input[type="text"] {
+            width: 200px;
+            padding: 5px;
+            border-radius: 3px;
+            border: none;
+        }
+
+        .search-window button {
+            background-color: gold;
+            color: black;
+            padding: 5px 10px;
+            border-radius: 3px;
+            border: none;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        .search-window button:hover {
+            background-color: rgb(218, 165, 32);
+        }
+
     </style>
 </head>
 <body>
+    <div class="search-window">
+        <form action="{{ route('tvshows.search') }}" method="GET">
+            <input type="text" name="search" placeholder="Search TV Shows">
+            <button type="submit">Search</button>
+        </form>
+    </div>
     <div class="container">
         <div class="top-right">
         <!-- Authorization check for whether a visitor is authorized (login) -->    

@@ -103,6 +103,30 @@ class TemporaryTVShowController extends Controller
         return redirect()->back()->with('success', 'Removed from watchlist.');
     }
 
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+    
+        // Check if the search field is empty, and if it is, just bring the user back to the home view
+        if (empty($search)) {
+            return redirect()->route('home');
+        }
+    
+        $temporaryTVShows = TVShow::where('name', 'like', '%' . $search . '%')->get();
+    
+        // Load the actors for each TV show
+        foreach ($temporaryTVShows as $temporaryTVShow) {
+            $actors = ActorsInShows::where('show_id', $temporaryTVShow->id)
+                ->join('actors', 'actors_in_shows.actor_id', '=', 'actors.id')
+                ->get(['actors.full_name']);
+    
+            $temporaryTVShow->actors = $actors;
+        }
+    
+        return view('temporary-tvshows.index', ['temporaryTVShows' => $temporaryTVShows]);
+    }
+    
+
     /**
      * Show the form for creating a new resource.
      */

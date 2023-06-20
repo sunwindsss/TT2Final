@@ -32,6 +32,9 @@ Route::delete('/tvshows/rate/{rating}', [TemporaryTVShowController::class, 'dele
 Route::post('/tvshows/{tvShow}/watchlist', [TemporaryTVShowController::class, 'addToWatchlist'])->name('watchlist.add');
 Route::delete('/watchlist/{watchlist}', [TemporaryTVShowController::class, 'removeFromWatchlist'])->name('watchlist.remove');
 
+// Search field route
+Route::get('/tvshows/search', [TemporaryTVShowController::class, 'search'])->name('tvshows.search');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
