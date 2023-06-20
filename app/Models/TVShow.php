@@ -29,4 +29,10 @@ class TVShow extends Model
     {
         return $this->hasMany(Watchlist::class, 'show_id');
     }
+
+    // function so the separate TV show info view works
+    public function actors()
+    {
+        return $this->belongsToMany(Actor::class, 'actors_in_shows', 'show_id', 'actor_id');
+    }
 }

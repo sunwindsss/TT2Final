@@ -22,6 +22,7 @@ Route::get('/', function () {
 });
 */
 
+// Home route
 Route::get('/', [TemporaryTVShowController::class, 'index'])->name('home');
 
 // Routes regarding to TV show ratings
@@ -34,6 +35,9 @@ Route::delete('/watchlist/{watchlist}', [TemporaryTVShowController::class, 'remo
 
 // Search field route
 Route::get('/tvshows/search', [TemporaryTVShowController::class, 'search'])->name('tvshows.search');
+
+// TV show info view route
+Route::get('/tvshows/{tvshow}', [TemporaryTVShowController::class, 'show'])->name('tvshows.show');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

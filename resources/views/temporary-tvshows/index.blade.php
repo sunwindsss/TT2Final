@@ -141,7 +141,13 @@
                     <!-- Grabs TV show image using the image path from the database -->
                     <img src="{{ asset('storage/' . $temporaryTVShow->picture) }}" alt="TV Show Picture">
                         <div class="show-info">
-                            <h2 class="title">{{ $temporaryTVShow->name }}</h2>
+                        <h2 class="title">
+                            <a href="{{ route('tvshows.show', ['tvshow' => $temporaryTVShow->id]) }}" style="text-decoration: none; color: inherit;">
+                                <span onmouseover="this.style.color='gold';" onmouseout="this.style.color='inherit';">
+                                    {{ $temporaryTVShow->name }}
+                                </span>
+                            </a>
+                        </h2>
                             <p class="score">Score: <span>{{ $temporaryTVShow->fixed_score }}</span></p>
                             <ul>
                                 <!-- Lists actors -->

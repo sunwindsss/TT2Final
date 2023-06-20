@@ -14,4 +14,10 @@ class Actor extends Model
     {
         return $this->hasMany(ActorsInShows::class, 'actor_id');
     }
+
+    // function so the separate TV show info view works
+    public function tvShows()
+    {
+        return $this->belongsToMany(TVShow::class, 'actors_in_shows', 'actor_id', 'show_id');
+    }
 }
